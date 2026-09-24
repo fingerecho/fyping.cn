@@ -49,6 +49,7 @@ const navItems = [
   { name: "技能", path: "/skills" },
   { name: "博客", path: "/blog" },
   { name: "联系", path: "/contact" },
+  { name: "旧版", href: "https://fingerecho.com", target: "_blank" },
 ];
 
 const toggleMenu = () => {
@@ -72,15 +73,24 @@ const toggleMenu = () => {
 
         <!-- 桌面端导航 -->
         <div class="hidden md:flex items-center space-x-6">
-          <router-link
-            v-for="item in navItems"
-            :key="item.path"
-            :to="item.path"
-            class="nav-link"
-            :class="{ 'text-primary': route.path === item.path }"
-          >
-            {{ item.name }}
-          </router-link>
+          <template v-for="item in navItems" :key="item.path || item.href">
+            <a
+              v-if="item.href"
+              :href="item.href"
+              :target="item.target || '_self'"
+              class="nav-link"
+            >
+              {{ item.name }}
+            </a>
+            <router-link
+              v-else
+              :to="item.path"
+              class="nav-link"
+              :class="{ 'text-primary': route.path === item.path }"
+            >
+              {{ item.name }}
+            </router-link>
+          </template>
           <ThemeToggle />
         </div>
 
@@ -128,18 +138,28 @@ const toggleMenu = () => {
       >
         <div v-show="isMenuOpen" class="mobile-menu md:hidden">
           <div class="py-2 space-y-1">
-            <router-link
-              v-for="item in navItems"
-              :key="item.path"
-              :to="item.path"
-              class="block px-4 py-2 text-base hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              :class="{
-                'bg-primary/10 text-primary': route.path === item.path,
-              }"
-              @click="closeMenu"
-            >
-              {{ item.name }}
-            </router-link>
+            <template v-for="item in navItems" :key="item.path || item.href">
+              <a
+                v-if="item.href"
+                :href="item.href"
+                :target="item.target || '_self'"
+                class="block px-4 py-2 text-base hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                @click="closeMenu"
+              >
+                {{ item.name }}
+              </a>
+              <router-link
+                v-else
+                :to="item.path"
+                class="block px-4 py-2 text-base hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                :class="{
+                  'bg-primary/10 text-primary': route.path === item.path,
+                }"
+                @click="closeMenu"
+              >
+                {{ item.name }}
+              </router-link>
+            </template>
           </div>
         </div>
       </transition>
