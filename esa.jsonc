@@ -1,0 +1,12 @@
+{
+  "name": "fyping-cn-vue",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm build",
+  "assets": {
+    "directory": "./dist",
+    "notFoundStrategy": "singlePageApplication"
+  },
+  "dev": {
+    "port": 18080
+  }
+}
