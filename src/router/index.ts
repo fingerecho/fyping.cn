@@ -8,7 +8,7 @@ const routes: RouteRecordRaw[] = [
     name: "home",
     component: HomeView,
     meta: {
-      title: "个人作品集 | 首页",
+      title: "方克铖个人网 | 首页",
     },
   },
   {
@@ -78,7 +78,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/contact",
     name: "contact",
-    component: () => import("@/views/ContactView.vue"),
+    component: () => import("@/views/ContactFypingView.vue"),
     meta: {
       title: "联系",
       transition: "scale",

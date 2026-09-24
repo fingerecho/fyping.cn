@@ -17,7 +17,7 @@ export const siteConfig = {
   },
 
   // 个性化配置
-  slogan: "社会就是最好的课堂。", // 个性签名
+  slogan: "用代码构建知识图谱，在数据中寻找回声。", // 个性签名
   skills: ["C++", "Qt", "AI", "PyTorch", "Docker", "Git"], // 技能标签
 
   // SEO 相关配置
