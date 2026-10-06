@@ -72,7 +72,7 @@ const routes: RouteRecordRaw[] = [
     name: "blog",
     component: () => import("@/views/BlogView.vue"),
     meta: {
-      title: "技术博客",
+      title: "博客",
     },
   },
   {

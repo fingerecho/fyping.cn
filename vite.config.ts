@@ -93,19 +93,26 @@ export default defineConfig({
     },
   },
   server: {
+    // proxy: {
+    //   "/rss.xml": {
+    //     target: "https://www.mmm.sd",
+    //     changeOrigin: true,
+    //     rewrite: (path) => path + '?t=' + Date.now(),
+    //     headers: {
+    //       Accept: "application/xml, text/xml, */*",
+    //       "User-Agent": "Mozilla/5.0",
+    //       "Cache-Control": "no-cache",
+    //       "Pragma": "no-cache"
+    //     },
+    //   },
+    // },
     proxy: {
-      "/rss.xml": {
-        target: "https://www.mmm.sd",
-        changeOrigin: true,
-        rewrite: (path) => path + '?t=' + Date.now(),
-        headers: {
-          Accept: "application/xml, text/xml, */*",
-          "User-Agent": "Mozilla/5.0",
-          "Cache-Control": "no-cache",
-          "Pragma": "no-cache"
-        },
-      },
-    },
+        '/api/rss': {
+          target: 'https://api.rss2json.com',
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/api\/rss/, '/v1/api.json')
+        }
+      }
   },
   define: {
     __VUE_OPTIONS_API__: true,

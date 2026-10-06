@@ -5,12 +5,12 @@ import { config } from "@/config";
 import { siteConfig } from "@/config/site";
 import avatarImg from "@/assets/images/fyping.cn.jpg";
 
-const titles = ref(["C++客户端工程师", "热爱编程", "热爱生活"]);
+const titles = ref(["C++/AI开发工程师", "热爱编程", "热爱生活", "以 C++ 筑基，以 AI 逐梦"]);
 const currentTitleIndex = ref(0);
 const isWaving = ref(false);
 const slogan = ref("");
 const fullSlogan = siteConfig.slogan;
-const typewriterSpeed = 80; // 稍微加快打字速度
+const typewriterSpeed = 2; // 稍微加快打字速度
 const isTypingComplete = ref(false);
 
 // 标题切换
