@@ -30,11 +30,21 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    title: "KCEnvEditor(克铖环境变量管理器)",
+    description:
+      "一款轻量级 Windows 环境变量管理器，支持可视化查看、编辑、备份与回滚系统/用户变量，让 PATH 配置更安全、更省心。",
+    tags: ["Windows", "环境变量", "开源"],
+    image: "https://picsum.photos/800/600?random=5",
+    link: "https://github.com/fingerecho/KCEnvEditor",
+    status: "completed",
+  },
+  {
+    id: 5,
     title: "trackingsite(知识图谱项目)",
     description:
       "开源、隐私友好的网站访问统计分析工具，提供详细的访问数据和洞察。",
     tags: ["数据分析", "统计", "开源"],
-    image: "https://picsum.photos/800/600?random=5",
+    image: "https://picsum.photos/800/600?random=6",
     link: "https://github.com/fingerecho/trackingsite/tree/master",
     status: "completed",
   },

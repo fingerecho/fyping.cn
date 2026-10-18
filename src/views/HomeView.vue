@@ -10,7 +10,7 @@ const currentTitleIndex = ref(0);
 const isWaving = ref(false);
 const slogan = ref("");
 const fullSlogan = siteConfig.slogan;
-const typewriterSpeed = 2; // 稍微加快打字速度
+const typewriterSpeed = 800; // 稍微加快打字速度
 const isTypingComplete = ref(false);
 
 // 标题切换
